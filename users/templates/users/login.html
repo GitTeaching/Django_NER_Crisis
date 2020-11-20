@@ -1,0 +1,41 @@
+{% extends "nercrisis/base.html" %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+  <div class="banner">
+      <div class="bg-overlay">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="banner-text">
+                <h2>Log In</h2>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="contact-form">
+              <form method="post">
+                {% csrf_token %}
+                <div class="col-md-offset-3 col-md-6 col-md-offset-3">
+                  <fieldset class="form-group">
+                      {{ form|crispy }}
+                  </fieldset>
+                </div>
+                <div class="col-md-offset-2 col-md-8 col-md-offset-2 text-center">
+                  <button type="submit" class="contact-button">Log In</button>
+                </div>
+              </form>
+              <div class="border-top pt-3 col-md-offset-3 col-md-6 col-md-offset-3">
+                  <small class="text-muted">
+                      Need An Account? <a class="ml-2" href="{% url 'register' %}">Sign Up Now</a>
+                  </small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+{% endblock content %}
+
+

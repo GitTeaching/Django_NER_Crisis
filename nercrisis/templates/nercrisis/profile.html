@@ -1,0 +1,49 @@
+
+{% extends 'nercrisis/base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+	<div class="portfolio">
+	    <div class="container">
+	      <div class="row">
+	        <div class="col-lg-12 text-center text">
+	        	<br><br>
+	            <h3>User Profile - Data Reports</h3>
+	        </div>
+	        <div class="col-xs-6 text-center">
+	      		<h4>Total reports : {{ reports|length }}</h4>
+	      	</div>
+	      	<div class="col-xs-6 text-center">
+	      		<a class="btn btn-md btn-primary" href="{% url 'add_report' %}">Add Report</a>
+	      	</div>
+	      </div>
+	      <br>
+	      <div class="row">
+            <div class="col-md-12 col-sm-12">
+              <div class="portfolio-item">  
+                <div class="card card-body">
+					<table class="table table-sm">
+						<tr>
+							<th>Report</th>
+							<th>Source</th>
+							<th>Update</th>
+							<th>Remove</th>
+						</tr>
+						{% for report in reports %}
+							<tr>
+								<td>{{ report.text }}</td>
+								<td>{{ report.source }}</td>
+								<td><a class="btn btn-md btn-info" href="{% url 'update_report' report.id %}">Update</a></td>
+								<td><a class="btn btn-md btn-danger" href="{% url 'delete_report' report.id %}">Delete</a></td>
+							</tr>
+						{% endfor %}
+					</table>
+				</div>
+              </div>
+            </div>       
+	    </div>
+	</div>
+
+{% endblock %}

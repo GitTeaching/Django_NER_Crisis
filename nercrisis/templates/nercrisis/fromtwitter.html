@@ -1,0 +1,70 @@
+
+{% extends 'nercrisis/base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+	<div class="banner" id="banner">
+	    <div class="bg-overlay">
+	      <div class="container">
+
+	        <div class="row">
+	          <div class="col-md-12">
+	            <div class="banner-text">
+	              <h2>Welcome to <span>Crisis-NER</span> recognizer</h2>
+	              <p>Extract 4W situational events - WHAT WHERE WHEN WHO - from Twitter</p>
+	            </div>
+	          </div>
+	        </div>
+
+	        <div class="row">
+	          <div class="contact-form">
+	            <form method="post" action="{% url 'extract_events_from_twitter' %}">
+	              {% csrf_token %}
+	              <div class="col-sm-offset-2 col-sm-4"> 
+	              	<label>Enter Hashtag : </label>               
+	                <input class="form-control" type="text" name="hashtag" placeholder="{{ hashtag }}" required>
+	              </div>
+	              <div class="col-sm-6 text-center">
+	                <button type="submit" class="contact-button">Get Events</button>
+	              </div>
+	            </form>
+	          </div>
+	        </div>
+
+
+	      </div>
+	    </div>
+	</div>
+
+	{% if events_entities %}
+    	<div classe="portfolio">
+			<table class="container portfolio">
+				<thead>
+					<tr>
+						<th><h1>Tweets</h1></th>
+						<th><h1>What</h1></th>
+						<th><h1>Who</h1></th>
+						<th class="large-screen"><h1>Where</h1></th>
+						<th class="large-screen"><h1>When</h1></th>
+						<th class="small-screen"><h1>Where & When</h1></th>
+					</tr>
+				</thead>
+				<tbody>
+					{% for event,ent in events_entities %}
+						<tr>
+							<td>{{ent|safe}}</td>
+							<td>{{event.WHAT}}</td>
+							<td>{{event.WHO}}</td>
+							<td class="large-screen">{{event.WHERE}}</td>
+							<td class="large-screen">{{event.WHEN}}</td>
+							<td class="small-screen">{{event.WHERE}} & {{event.WHEN}} </td>
+						</tr>
+					{% endfor %}
+				</tbody>
+			</table>
+		</div>	
+	{% endif %}
+
+{% endblock %}

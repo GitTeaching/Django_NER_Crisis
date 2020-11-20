@@ -1,0 +1,24 @@
+
+{% extends "nercrisis/base.html" %}
+
+{% block content %}
+    <div class="banner">
+      <div class="bg-overlay">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <div>
+                <h2>You have been logged out</h2>
+			    <div class="border-top pt-3">
+			        <small class="text-muted">
+			            <a href="{% url 'login' %}">Log In Again</a>  -   
+			            <a href="{% url 'home' %}">Home</a>
+			        </small>
+			    </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+{% endblock content %}

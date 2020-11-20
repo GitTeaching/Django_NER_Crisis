@@ -1,0 +1,140 @@
+
+{% extends "nercrisis/base.html" %}
+
+{% load static %}
+
+{% block content %}
+  <!-- Welcome -->
+  <div class="banner" id="banner">
+    <div class="bg-overlay">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="banner-text">
+              <h2>Welcome to <span>Crisis-NER</span> recognizer</h2>
+              <p>Extract 4W situational events - WHAT WHERE WHEN WHO - from your text reports</p>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="contact-form">
+            <form role="form" method="post" action="{% url 'extract_event' %}" enctype="multipart/form-data">
+              {% csrf_token %}
+              <div class="col-md-offset-1 col-md-10 col-md-offset-1">
+                <textarea class="form-control" placeholder="" rows="10" name="text">{{text}}</textarea>
+              </div>
+              <div class="col-md-offset-2 col-md-8 col-md-offset-2">
+                <input type="file" class="form-control" id="file" accept=".docx,.txt" name="report_file">
+              </div>
+              <div class="col-md-offset-2 col-md-8 col-md-offset-2 text-center">
+                <button type="submit" class="contact-button">Get Event</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Features - WWWW -->
+  <div class="features">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3 col-sm-6 col-xs-12">
+          <div class="feature-box media">
+            <div class="icon-box text-center pull-left media-object"> <i class="icon-info"></i> </div>
+            <div class="feature-text media-body">
+              <h4>WHAT</h4>
+              <p class="feature-detail">{{event.WHAT}}</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6 col-xs-12">
+          <div class="feature-box media pull-left">
+            <div class="icon-box text-center pull-left media-object"> <i class="icon-location-pin"></i> </div>
+            <div class="feature-text media-body">
+              <h4>WHERE</h4>
+              <p class="feature-detail">{{event.WHERE}}</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6 col-xs-12">
+          <div class="feature-box media pull-left">
+            <div class="icon-box text-center pull-left media-object"> <i class="icon-people"></i> </div>
+            <div class="feature-text media-body">
+              <h4>WHO</h4>
+              <p class="feature-detail">{{event.WHO}}</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6 col-xs-12">
+          <div class="feature-box media pull-left">
+            <div class="icon-box text-center pull-left media-object"> <i class="icon-clock"></i> </div>
+            <div class="feature-text media-body">
+              <h4>WHEN</h4>
+              <p class="feature-detail">{{event.WHEN}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- NER Visualization -->
+  <div id="work" class="portfolio">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-10 col-lg-offset-1 text-center text">
+          <h3>Named Entity Visualisation</h3>
+          <div class="row">
+            <div class="col-md-12 col-sm-12">
+              <div class="portfolio-item">  
+                <p>
+                  <sup><i class="fa fa-quote-left"></i></sup>
+                  {{entities_html|safe}}
+                  <sup><i class="fa fa-quote-right"></i></sup>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- API Part -->
+  <div class="call-to-action">
+    <div class="call-overlay" id="ourapi">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 col-sm-10">
+            <div class="subscribe-text">
+              <h3>Use our Crisis NER API</h3>
+              <p>Our API acces point : <strong>POST  /api/get_wwww_event/</strong> : takes a text as input and sends a WHAT-WHERE-WHO-WHEN situational event as output.</p>
+            </div>
+          </div>
+          <div class="col-md-4 text-center"> <a href="" class="subscribe-button">Try it Now</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="contact" id="contact">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="text-center">
+            <h3>How it Works</h3>
+          </div>
+        </div>
+        <div class="col-md-12">
+            <img src="{% static 'images/system-architecture.png' %}" style="width: 100%; height: auto;">
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}
