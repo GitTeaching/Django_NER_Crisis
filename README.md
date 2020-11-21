@@ -4,6 +4,6 @@ Django web application for extracting 4W situational events - WHAT WHERE WHEN WH
 
 ### Screenshots :
 
-<img src="https://github.com/GitTeaching/Django_NER_Crisis/blob/master/Django_NER_Crisis/static/images/Screenshot_1.png" width="700">
+<img src="https://github.com/GitTeaching/Django_NER_Crisis/blob/master/Django_NER_Crisis/static/images/Screenshot_1.png" width="900">
 
-<img src="https://github.com/GitTeaching/Django_NER_Crisis/blob/master/Django_NER_Crisis/static/images/Screenshot_2.png" width="700">
+<img src="https://github.com/GitTeaching/Django_NER_Crisis/blob/master/Django_NER_Crisis/static/images/Screenshot_2.png" width="900">
