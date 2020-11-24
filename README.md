@@ -14,9 +14,8 @@ Django web application for extracting 4W situational events - WHAT WHERE WHEN WH
 - Django REST Framework : for REST API development
 - SpaCy & Displacy : for NLP and Named Entity Recognition visualization
 - CrisisLex : for crisis lexicon (updated and modified)
-- Tweepy : for accessing the Twitter API
 - SQLite database & PostgreSQL for deployement
-
+- Tweepy : for accessing the Twitter API
 
 ## System Architecture 
 
