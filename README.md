@@ -14,9 +14,8 @@ Django web application - Named Entity Recognition to identify and extract 4W sit
 - Django REST Framework : for REST API development
 - SpaCy & Displacy : for NLP and Named Entity Recognition visualization
 - CrisisLex : for crisis lexicon (updated and modified)
-- SQLite database & PostgreSQL for deployement
 - Tweepy : for accessing the Twitter API
-
+- SQLite database & PostgreSQL for deployement
 
 ## System Architecture 
 
