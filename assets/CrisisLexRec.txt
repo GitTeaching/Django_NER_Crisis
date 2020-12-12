@@ -256,3 +256,8 @@ forecast
 hazard
 mitigation
 forecasts
+vaccination
+vaccin
+coronavirus
+covid19
+SARSCOV2
