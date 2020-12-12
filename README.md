@@ -19,7 +19,7 @@ Deployed on Heroku : https://djangonercrisis.herokuapp.com/home/
 - SpaCy & Displacy : for NLP and Named Entity Recognition visualization
 - CrisisLex : for crisis lexicon (updated and modified)
 - Tweepy : for accessing the Twitter API
-- SQLite database & PostgreSQL for deployement
+- SQLite database & PostgreSQL for deployment
 
 ## System Architecture :
 
