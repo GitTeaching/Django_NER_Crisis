@@ -260,4 +260,4 @@ vaccination
 vaccin
 coronavirus
 covid19
-SARSCOV2
+SARS-CoV
