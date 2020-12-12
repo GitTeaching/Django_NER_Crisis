@@ -257,7 +257,7 @@ hazard
 mitigation
 forecasts
 vaccination
-vaccin
+vaccine
 coronavirus
 covid19
 SARS-CoV
