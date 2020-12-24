@@ -260,3 +260,4 @@ vaccination
 vaccine
 coronavirus
 covid19
+SARS-COV-2
